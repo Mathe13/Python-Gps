@@ -1,5 +1,6 @@
 """Classes do projeto gps."""
 import requests
+import re
 import json
 from unidecode import unidecode as unidecode
 
@@ -60,11 +61,12 @@ class Passo():
         """Inicializador da classe."""
         self.distance = step['distance']['text']
         self.duration = step['duration']['text']
-        self.instruction = self.remove_b_tag(str(step['html_instructions']))
+        self.instruction = self.remove_tags(str(step['html_instructions']))
 
     @staticmethod
-    def remove_b_tag(html_instructions):
+    def remove_tags(html_instructions):
         """Remove as tags."""
-        instruction = html_instructions.replace('<b>', '')
-        instruction = instruction.replace('</b>', '')
+        instruction = re.sub('[<\S*b>]*[<\S*div\W*\S*>]*', '',
+                             html_instructions)
+
         return (instruction)
