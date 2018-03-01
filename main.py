@@ -1,6 +1,6 @@
 """Tentativa de criar um gps."""
 from core import Gps
-key = key = 'AIzaSyC4j5Zm4InJYzTXNytIVgTD7471_CnVpT8'
+key = key = 'your-key-here'
 
 if __name__ == '__main__':
     gps = Gps(key)
