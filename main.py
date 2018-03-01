@@ -1,6 +1,6 @@
 """Tentativa de criar um gps."""
 from core import Gps
-key = key = ''
+key = key = 'AIzaSyC4j5Zm4InJYzTXNytIVgTD7471_CnVpT8'
 
 if __name__ == '__main__':
     gps = Gps(key)
@@ -9,7 +9,3 @@ if __name__ == '__main__':
     for caminho in gps.caminhos:
         for passo in caminho.passos:
             print('daqui à:' + passo.distance + " " + passo.instruction)
-    # teste = 'Head <b>north</b> on <b>R. Cenair Maicá</b> toward <b>R. Pedro Raymundo</b>'
-    # teste = teste.replace('<b>', '')
-    # teste = teste.replace('</b>', '')
-    # print(teste)
