@@ -67,5 +67,4 @@ class Passo():
         """Remove as tags."""
         instruction = html_instructions.replace('<b>', '')
         instruction = instruction.replace('</b>', '')
-        print('removido:' + instruction)
         return (instruction)
